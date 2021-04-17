@@ -4,9 +4,10 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+// What to render and where
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App /> 
   </React.StrictMode>,
   document.getElementById('root')
 );
