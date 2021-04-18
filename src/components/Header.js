@@ -1,8 +1,12 @@
 import React from "react";
+import ticketImage from "./../img/ticket.jpg";
 
 function Header(){
   return (
-    <h1>Help Queue</h1>
+    <React.Fragment>
+      <h1>Help Queue</h1>
+      <img src={ticketImage} alt="show ticket kiosk" width="400" height="300" />
+    </React.Fragment>
   );
 }
 
