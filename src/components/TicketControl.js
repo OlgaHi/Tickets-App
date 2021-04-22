@@ -10,7 +10,8 @@ class TicketControl extends React.Component {
     this.state = {
       formVisibleOnPage: false, //state slice
       masterTicketList: [],
-      selectedTicket: null
+      selectedTicket: null,
+      editing: false
     };
   }
 
@@ -42,8 +43,13 @@ class TicketControl extends React.Component {
     const newMasterTicketList = this.state.masterTicketList.filter(ticket => ticket.id !== id);
     this.setState({
       masterTicketList: newMasterTicketList,
-      selectedTicket: null
+      selectedTicket: null,
     });
+  }
+
+  handleEditClick = () => {
+    console.log("handleEditClick reached!");
+    this.setState({editing: true});
   }
 
   render(){
@@ -51,7 +57,7 @@ class TicketControl extends React.Component {
     let buttonText = null; 
 
     if (this.state.selectedTicket != null) {
-      currentlyVisibleState = <TicketDetail ticket = {this.state.selectedTicket} onClickingDelete = {this.handleDeletingTicket} />
+      currentlyVisibleState = <TicketDetail ticket = {this.state.selectedTicket} onClickingDelete = {this.handleDeletingTicket} onClickingEdit = {this.handleEditClick}/>
       buttonText = "Return to Ticket List";
       // While our TicketDetail component only takes placeholder data, we will eventually be passing the value of selectedTicket as a prop.
     }
