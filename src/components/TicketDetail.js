@@ -18,7 +18,8 @@ function TicketDetail(props){
 
 TicketDetail.propTypes = {
   ticket: PropTypes.object,
-  onClickingDelete: PropTypes.func
+  onClickingDelete: PropTypes.func,
+  onClickingEdit: PropTypes.func
 };
 
 export default TicketDetail;

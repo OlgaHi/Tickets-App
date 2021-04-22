@@ -2,6 +2,7 @@ import React from 'react';
 import NewTicketForm from './NewTicketForm';
 import TicketList from './TicketList';
 import TicketDetail from './TicketDetail';
+import EditTicketForm from './EditTicketForm';
 
 class TicketControl extends React.Component {
 
@@ -55,8 +56,11 @@ class TicketControl extends React.Component {
   render(){
     let currentlyVisibleState = null;
     let buttonText = null; 
-
-    if (this.state.selectedTicket != null) {
+    
+    if (this.state.editing ) {      
+      currentlyVisibleState = <EditTicketForm ticket = {this.state.selectedTicket} />
+      buttonText = "Return to Ticket List";
+    } else if (this.state.selectedTicket != null) {
       currentlyVisibleState = <TicketDetail ticket = {this.state.selectedTicket} onClickingDelete = {this.handleDeletingTicket} onClickingEdit = {this.handleEditClick}/>
       buttonText = "Return to Ticket List";
       // While our TicketDetail component only takes placeholder data, we will eventually be passing the value of selectedTicket as a prop.
