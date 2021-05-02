@@ -8,8 +8,10 @@ function Ticket(props){
       <h3>3a</h3>
       <h3>{props.location} and {props.names}</h3>
       <p><em>{props.issue}</em></p>
-      </div>
+      <p><em>{props.formattedWaitTime}</em></p>
       <hr/>
+      </div>
+      
     </React.Fragment>
   );
 }
@@ -19,7 +21,8 @@ Ticket.propTypes = {
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
   id: PropTypes.string, 
-  whenTicketClicked: PropTypes.func
+  whenTicketClicked: PropTypes.func,
+  formattedWaitTime: PropTypes.string
 };
 
 export default Ticket;
